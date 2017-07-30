@@ -50,11 +50,14 @@ The following constraints currently apply when using the service:
 Future Work:
 -------------
 
+Features:
 * Support passing file as URL or as base64 image of the file.
 * Support using a distinct API key for use by API user (as a substitute to authentication)
 * Support an ongoing job on server to delete an orphaned image files (due to any unexpected failures).
 * Support more classifiers (digit recognizers) in an ensmble classifier to choose the digit with the maximum provided confidence or by using majority voting.
 * Create and use custom trained classifier(s).
+
+Development:
 * More Unit Test Coverage.
 * Load Testing by sending hundreds of concurrent post requests.
 * Support logging.
@@ -81,4 +84,19 @@ The C# Visual Studio solution consists of 3 projects:
 * DigitRecognition: Project for .NET DLL containing the digit recognition logic.
 * DigitRecognizerService: Project for .NET DLL containing the ASP.NET Web API REST service.
 * DigitRecognizerService.Tests: Project for unit/integration tests applied for project DigitRecognizerService. Currently it contains 1 unit test class for class DigitRecognizer.
+
+More About me:
+-----------------
+
+My AI-related Blog(s):
+http://omarsbrain.wordpress.com/
+https://rtsairesearch.wordpress.com/
+
+My Resume: (Feb 2017)
+https://app.box.com/s/wc8cjtrtfcx0a4b3mqol9ktmaol80q9q
+
+LinkedIn Profile:
+https://www.linkedin.com/in/omarenayet/
+
+
 
