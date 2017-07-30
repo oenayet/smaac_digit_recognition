@@ -4,7 +4,7 @@ Smaac Digit Recognition Task - Omar Enayet
 Introduction
 ------------
 
-This is the source code for an ASP.NET Web Api service using C# used for recognizing a digit in an image file uploaded to the service.
+This is the source code for an ASP.NET Web Api REST service using C# used for recognizing a digit in an image file uploaded to the service.
 
 Current Deployment:
 -------------------
@@ -21,7 +21,7 @@ Service Use:
 -------------
 
 Send a POST request to :
-http://omarsmaacdigitdetector.azurewebsites.net/api/digitimageupload containing only the Multipart encoded image file with image filename containing the digit to be recognized.
+http://omarsmaacdigitdetector.azurewebsites.net/api/digitimageupload containing only the Multipart encoded image file (with image filename) in message body containing the digit to be recognized.
 
 A flat JSON structure with the following fields will be received:
 
@@ -36,7 +36,18 @@ A flat JSON structure with the following fields will be received:
 	* APPLICATION_ERROR (4): An application error has occurred.
 	* RECOGNITION_FAILURE (5): Could not recognize digit in image.
 
+Curl Command:
+--------------
 
+curl -X POST \
+  http://omarsmaacdigitdetector.azurewebsites.net/api/digitimageupload \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H 'postman-token: 179729a8-7304-7b5c-cfcf-62331bf29ee5' \
+  -F Image1=@1.JPG
+  
+where 1.jpg is the an example of the name of the image file.
+	
 Service Usage Constraints:
 --------------------------
 
