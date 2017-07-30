@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitRecognition", "DigitRecognition\DigitRecognition.csproj", "{A9A2CCD2-A583-49ED-A9B0-9BC7A9967926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitRecognizerService", "DigitRecognizerService\DigitRecognizerService.csproj", "{B3FA6462-7B90-4809-ABD2-A013457B6A3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitRecognizerService.Tests", "DigitRecognizerService.Tests\DigitRecognizerService.Tests.csproj", "{02B072EA-6469-47BC-8CE0-085D16B9D7F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9A2CCD2-A583-49ED-A9B0-9BC7A9967926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A2CCD2-A583-49ED-A9B0-9BC7A9967926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A2CCD2-A583-49ED-A9B0-9BC7A9967926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A2CCD2-A583-49ED-A9B0-9BC7A9967926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3FA6462-7B90-4809-ABD2-A013457B6A3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3FA6462-7B90-4809-ABD2-A013457B6A3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3FA6462-7B90-4809-ABD2-A013457B6A3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3FA6462-7B90-4809-ABD2-A013457B6A3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02B072EA-6469-47BC-8CE0-085D16B9D7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02B072EA-6469-47BC-8CE0-085D16B9D7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02B072EA-6469-47BC-8CE0-085D16B9D7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02B072EA-6469-47BC-8CE0-085D16B9D7F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
