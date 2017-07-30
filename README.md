@@ -57,6 +57,7 @@ Future Work:
 * Create and use custom trained classifier(s).
 * More Unit Test Coverage.
 * Load Testing by sending hundreds of concurrent post requests.
+* Support logging.
 
 Internal Functions outline
 --------------------------
