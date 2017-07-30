@@ -51,7 +51,7 @@ namespace DigitRecognizerService.Models
                         ErrorMsg = "Image format is not supported.";
                         break;
                     case (ErrorCode.IMAGE_SIZE_EXCEED_LIMIT):
-                        ErrorMsg = "Image size exceeded maximum limit. It should be between 1";
+                        ErrorMsg = "Image size exceeded maximum limit. It should be under 1 MB.";
                         break;
                     case (ErrorCode.RECOGNITION_FAILURE):
                         ErrorMsg = "Could not recognize digit in image.";
