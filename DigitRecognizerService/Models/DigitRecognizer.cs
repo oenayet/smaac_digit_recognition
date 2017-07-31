@@ -1,6 +1,7 @@
 ﻿using DigitRecognition;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -87,11 +88,15 @@ namespace DigitRecognizerService.Models
         {
             DigitImageRecognizeResult result = new Models.DigitImageRecognizeResult();
 
+            Trace.TraceInformation($"Got request with {digitImages.Count} files");
+
             //One & only 1 image file should be passed
             //TODO: Support multiple images
             if (digitImages != null && digitImages.Count == 1)
             {
                 IDigitImageFile digitImageFile = digitImages[0];
+
+                Trace.TraceInformation($"Got request with file name:{digitImageFile.FileName ?? "N/A"}, length:{digitImageFile.ContentLength}, type:{digitImageFile.ContentType}");
 
                 //Make sure file content type is supported
                 if (SupportedContentTypes.Contains(digitImageFile.ContentType))
@@ -103,17 +108,20 @@ namespace DigitRecognizerService.Models
                     }
                     else
                     {
+                        Trace.TraceInformation($"Request with file name:{digitImageFile.FileName ?? "N/A"} refused because image size limit exceeded max allowed size.");
                         result.ErrorCode = ErrorCode.IMAGE_SIZE_EXCEED_LIMIT;
                     }
                 }
                 else
                 {
+                    Trace.TraceInformation($"Request with file name:{digitImageFile.FileName ?? "N/A"} refused because of image bad format.");
                     result.ErrorCode = ErrorCode.IMAGE_BAD_FORMAT;
                 }
 
             }
             else
             {
+                Trace.TraceInformation($"Request refused because of number of files exceeded maximum per request");
                 result.ErrorCode = ErrorCode.BAD_FILE_COUNT_PER_REQUEST;
             }
 
@@ -143,8 +151,9 @@ namespace DigitRecognizerService.Models
             {
                 fileSystemUtility.CreateDirectory(downloadDirectory);
             }
-            
+
             //Save image file to disk, to be processed.
+            Trace.TraceInformation($"Saving image file {filePath} on disk");
             imageFile.SaveAs(filePath);
 
             //Use the ensemble recognizer to recognize the digit.
@@ -153,11 +162,13 @@ namespace DigitRecognizerService.Models
             if (ch == null)
             {
                 //Could not recognize digit !
+                Trace.TraceInformation($"Could not recognize digit for image file {filePath}");
                 result.ErrorCode = ErrorCode.RECOGNITION_FAILURE;
             }
             else
             {
                 //Set Resultant values
+                Trace.TraceInformation($"Recognized digit for image file {filePath}: { ch.Value}, confidence: {confidence}");
                 result.Digit = ch.Value;
                 result.Confidence = confidence;
                 result.ErrorCode = ErrorCode.SUCCESS;

@@ -3,6 +3,7 @@ using DigitRecognizerService.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -58,6 +59,7 @@ namespace DigitRecognizerService.Controllers
             }
             catch (Exception ex)
             {
+                Trace.TraceError($"An error has occurred while detecting digit. {ex.Message}");
                 result.ErrorCode = ErrorCode.APPLICATION_ERROR;
                 result.ErrorMsg = $"An application error has occurred: {ex.Message}";
             }
